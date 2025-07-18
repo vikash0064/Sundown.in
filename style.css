@@ -1,0 +1,758 @@
+/* -----------------------------------
+   Font Imports and @font-face Rules
+----------------------------------- */
+@import url(https://db.onlinewebfonts.com/c/2fc0cbf60e7b2cb22302e564ab132cc3?family=The+Sun+Medium);
+
+@font-face {
+    font-family: "The Sun Medium";
+    src: url("https://db.onlinewebfonts.com/t/2fc0cbf60e7b2cb22302e564ab132cc3.eot");
+    src: url("https://db.onlinewebfonts.com/t/2fc0cbf60e7b2cb22302e564ab132cc3.eot?#iefix") format("embedded-opentype"),
+         url("https://db.onlinewebfonts.com/t/2fc0cbf60e7b2cb22302e564ab132cc3.woff2") format("woff2"),
+         url("https://db.onlinewebfonts.com/t/2fc0cbf60e7b2cb22302e564ab132cc3.woff") format("woff"),
+         url("https://db.onlinewebfonts.com/t/2fc0cbf60e7b2cb22302e564ab132cc3.ttf") format("truetype"),
+         url("https://db.onlinewebfonts.com/t/2fc0cbf60e7b2cb22302e564ab132cc3.svg#The Sun Medium") format("svg");
+}
+
+@font-face {
+    font-family: neu;
+    src: url(./NeueHaasDisplayLight.ttf);
+}
+@font-face {
+    font-family: neu;
+    font-weight: 100;
+    src: url(./NeueHaasDisplayRoman.ttf);
+}
+@font-face {
+    font-family:newbold;
+    src: url(./NeueHaasDisplayBold.ttf);
+}
+
+
+@font-face {
+    font-family: 'Gilroy';
+    src: url('fonts/Gilroy-Regular.woff2') format('woff2'),
+         url('fonts/Gilroy-Regular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+/* ----------------------------
+   Global & Reset Styles
+---------------------------- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: neu;
+}
+
+html, body {
+    height: 100%;
+    width: 100%;
+    font-family: 'Gilroy', sans-serif;
+}
+
+#main{
+    /* background-color: black; */
+    position: relative;
+    z-index: 10;
+}
+
+/* ----------------------------
+   #page1 Styles
+---------------------------- */
+#page1 {
+    min-height: 150vh;
+    width: 100%;
+    background-color: #EFEAE3;
+    position: relative;
+    padding: 0 2vw;
+    overflow: hidden;
+}
+
+/* Navigation */
+nav {
+    padding: 2vw 0vw;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+#nav-part2 {
+    display: flex;
+    align-items: center;
+    gap: 1vw;
+}
+
+#nav-part2 h4 {
+    padding: 10px 20px;
+    border: 1px solid rgba(0, 0, 0, 0.29);
+    border-radius: 50px;
+    font-size: 18px;
+    transition: all ease 0.4s;
+    position: relative;
+    font-weight: 800;
+    color: #000000bb;
+    overflow: hidden;
+}
+
+#nav-part2 h4::after {
+    content: "";
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    background-color: black;
+    left: 0;
+    bottom: -100%;
+    border-radius: 50%;
+    transition: all ease 0.4s;
+}
+
+#nav-part2 h4:hover::after {
+    bottom: 0;
+    border-radius: 0;
+}
+
+#nav-part2 h4 a {
+    color: black;
+    text-decoration: none;
+    position: relative;
+    z-index: 9;
+}
+
+#nav-part2 h4:hover a {
+    color: #fff;
+}
+
+/* Center Section */
+#center {
+    height: 80vh;
+    width: 100%;
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    border-bottom: 1px solid #0000003c;
+    padding-bottom: 4vw;
+}
+
+#left h3 {
+    width: 30vw;
+    font-size: 1.8vw;
+    line-height: 2vw;
+    font-family: "The Sun Medium";
+    font-weight: 700;
+}
+
+#center h1 {
+    font-size: 10vw;
+    line-height: 9vw;
+    text-align: right;
+}
+
+/* Video */
+#page1 video {
+    width: 100%;
+    margin-top: 4vw;
+    border-radius: 30px;
+    position: relative;
+    z-index: 2;
+}
+
+/* ----------------------------
+   Hero Floating Shapes
+---------------------------- */
+#hero-shape {
+    position: absolute;
+    width: 46vw;
+    height: 36vw;
+    right: 0;
+    top: 85vh;
+    filter: blur(15px);
+    border-top-left-radius: 50%;
+    border-bottom-left-radius: 50%;
+    overflow: hidden;
+    z-index: 0;
+    pointer-events: none;
+}
+
+#hero-1 {
+    background-color: #fe330aea;
+    height: 100%;
+    width: 100%;
+    border-top-left-radius: 50%;
+    border-bottom-left-radius: 50%;
+    filter: blur(15px);
+    position: absolute;
+    animation: floatBlob1 7s ease-in-out infinite;
+}
+
+#hero-2 {
+    background: linear-gradient(#fe430a, #fed50a);
+    height: 50vw;
+    width: 50vw;
+    border-radius: 50%;
+    filter: blur(20px);
+    position: absolute;
+    animation: floatBlob2 5s ease-in-out infinite;
+    top: 5%;
+    right: 20%;
+}
+
+#hero-3 {
+    background: linear-gradient(#fe530a, #fed50a);
+    height: 50vw;
+    width: 50vw;
+    border-radius: 50%;
+    filter: blur(15px);
+    position: absolute;
+    animation: floatBlob1 12s ease-in-out infinite reverse;
+    top: 30%;
+    left: 40%;
+}
+
+/* ----------------------------
+   Keyframe Animations
+---------------------------- */
+@keyframes floatBlob1 {
+    0%   { transform: translate(0, 0) scale(1) rotate(0deg); }
+    25%  { transform: translate(3%, -2%) scale(1.05) rotate(3deg); }
+    50%  { transform: translate(-2%, 4%) scale(0.97) rotate(-2deg); }
+    75%  { transform: translate(2%, -3%) scale(1.03) rotate(2deg); }
+    100% { transform: translate(0, 0) scale(1) rotate(0deg); }
+}
+
+@keyframes floatBlob2 {
+    0%   { transform: translate(0, 0) scale(1) rotate(0deg); }
+    25%  { transform: translate(-4%, 3%) scale(1.02) rotate(-4deg); }
+    50%  { transform: translate(2%, -2%) scale(1.05) rotate(4deg); }
+    75%  { transform: translate(-2%, 2%) scale(0.98) rotate(-3deg); }
+    100% { transform: translate(0, 0) scale(1) rotate(0deg); }
+}
+
+#page2 {
+    min-height: 60vh;
+    width: 100%;
+    background-color:#EFEAE3 ; /* Changed from red to match page1 */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 0;
+    padding: 5vw 2vw;
+    overflow: hidden;
+    position: relative; 
+    
+}
+
+#moving-text {
+    white-space: nowrap;
+    display: flex;
+    overflow-x: auto;
+    align-items: center;
+    scrollbar-width: none; 
+    -ms-overflow-style: none;  
+}
+
+#moving-text::-webkit-scrollbar {
+    display: none;
+}
+
+.con {
+    display: flex;
+    align-items: center;
+    gap: 2vw;
+    animation: move 12s linear infinite;
+    /* margin-bottom: 100px;  */
+}
+
+#moving-text h1 {
+    font-size: 9vw;
+    font-weight: 600;
+    display: inline-block;
+    color: #000000;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    
+}
+
+.gola {
+    height: 70px;
+    width: 70px;
+    border-radius: 50%;
+    background-color: #FE320A;
+    flex-shrink: 0;
+    margin: 0 1.5vw;
+}
+
+@keyframes move {
+    0%   { transform: translateX(0%); }
+    100% { transform: translateX(-100%); }
+}
+
+#page2-part1 {
+    min-height: 80vh;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 3vw;
+    padding: 5vw 3vw;
+    border-radius: 30px;
+    position: relative;
+    z-index: 2;
+    background-color: transparent; 
+    box-shadow: none;
+    margin-bottom: 300px;
+    
+}
+
+#page2-part1 h1 {
+    font-size: 3vw;
+    font-weight: 900;
+    width: 55%;
+    line-height: 4vw;
+    color: #222;
+    font-family: "The Sun Medium", sans-serif;
+    position: relative;
+    z-index: 2; /* Ensure text is above #gooey */
+    
+}
+
+#page2-part2 {
+    width: 30%;
+    color: #000;
+    line-height: 1.5vw;
+    margin-top: 80px;
+    position: relative;
+    z-index: 2; /* Ensure content is above #gooey */
+}
+
+#page2-part2 img {
+    width: 80%;
+    height: 100%; /* Set a fixed height for the image */
+    object-fit: cover; /* Ensure image covers the area */
+    margin-top: 100px;
+    border-radius: 15px;
+}
+
+
+#page2-part2 p {
+    font-weight: 300;
+    color: #000;
+    margin-top: 25px;
+    font-size: 1vw;
+    position: relative;
+    z-index: 2;
+    width: 80%;
+}
+
+#page2 #gooey {
+    height: 32vw;
+    width: 32vw;
+    position: absolute;
+    top: 45%;
+    left: 20%;
+    border-radius: 50%;
+    background: linear-gradient(to top, #fe3b0a, #ff4400);
+    filter: blur(15px);
+    animation: gooey 4s ease-in-out infinite alternate;
+    z-index: 1; /* Lower z-index so it's behind the text */
+    pointer-events: none;
+    overflow: hidden;
+    max-width: 90%;
+    max-height: 90%;
+}
+
+#page2 {
+    position: relative;
+    overflow: hidden; 
+}
+
+
+@keyframes gooey {
+    from {
+        transform: translate(10%, -10%) skew(0);
+    }
+    to {
+        transform: translate(-10%, 10%) skew(12deg);
+    }
+}
+
+#gol{
+    height: 10px;
+    width: 10px;
+    border-radius: 50%;
+    background-color: #FE320A;
+    flex-shrink: 0;
+    display: flex;
+    
+}
+
+#feature{
+    display: flex;
+    gap: 4px;
+   
+}
+
+#page3 {
+    min-height: 100vh;
+    width: 100%;
+    background-color: #EFEAE3;
+    padding: 2vw 0;
+}
+
+.elem {
+    height: 120px;
+    width: 100%;
+    position: relative;
+    /* border-top: 1px solid #000; */
+    border-bottom: 1px solid #00000062;
+    display: flex;
+    align-items: center;
+    padding: 0 2vw;
+    overflow: hidden;
+
+}
+
+.elem h2{
+    font-size: 3vw;
+    font-weight: 900;
+    /* background-color: red; */
+    font-family:newbold;
+    z-index: 9;
+    
+}
+
+.elem .overlay{
+    height: 100%;
+    width: 100%;
+    background-color: #ff9831;
+    position: absolute;
+    left: 0;
+    top: -100%;
+    transition: all ease 0.3s ;
+
+}
+
+.elem:hover .overlay{
+    top: 0;
+}
+
+
+#fixed-image{
+    height: 28vw;
+    width: 23vw;
+    /* background-color: red; */
+    border-radius: 20px;
+    position: fixed;
+    z-index: 99;
+    left: 50%;
+    top: 25%;
+    display: none;
+    background-size: cover;
+    background-position: center;
+
+}
+#all {
+    padding: 2vw 3vw;
+    display: flex;
+    align-items: center;
+    /* background-color: #fe3b0a; */
+    
+}
+#all h2{
+    /* background-color: yellowgreen; */
+    padding: 10px 20px;
+    border: 1px solid rgba(0, 0, 0, 0.437);
+    border-radius: 50px;
+    font-size: 18px;
+    transition: all ease 0.4s;
+    position: relative;
+    font-weight: 800;
+    color: #000000bb;
+    overflow: hidden;
+
+}
+
+#all h2::after {
+    content: "";
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    background-color: black;
+    left: 0;
+    bottom: -100%;
+    border-radius: 50%;
+    transition: all ease 0.4s;
+}
+
+#all h2:hover::after {
+    bottom: 0;
+    border-radius: 0;
+}
+
+#all h2 a {
+    color: black;
+    text-decoration: none;
+    position: relative;
+    z-index: 9;
+}
+
+#all h2:hover a {
+    color: #fff;
+}
+
+/* #page4 Section */
+/* Entire Page4 Section */
+#page4 {
+  padding: 5vw 3vw;
+  background-color:#EFEAE3;
+  font-family: Arial, sans-serif;
+  width: 100%;
+  height: 100%;
+}
+
+/* Main container */
+#black-box {
+  background-color: #111;
+  border-radius: 20px;
+  padding: 3vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  box-sizing: border-box;
+}
+
+/* Flex container */
+#tabcont {
+  display: flex;
+  gap: 6vw;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  justify-content: space-between;
+  width: 100%;
+}
+
+/* Tabs section */
+#tabs {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5vw;
+  min-width: 180px;
+  padding-top: 5%;
+}
+
+#tabs h2 {
+  font-size: 7vw;
+  font-weight: 700;
+  cursor: pointer;
+  transition: color 0.3s ease;
+  color: #fff;
+  line-height: 0.8;
+  padding-left: 10%;
+}
+
+#tabs h2:hover,
+#tabs h2.active {
+  color: #FE320A;
+}
+
+#tabs h2 a {
+  text-decoration: none;
+  color: inherit;
+  font-size: inherit;
+}
+
+/* Image + Description section */
+#tab2 {
+  max-width: 700px;
+  flex: 1;
+}
+
+#tab2 img {
+  width: 100%;
+  max-height: 100%;
+  border-radius: 18px;
+  object-fit: cover;
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.3);
+  transition: all 0.4s ease;
+}
+
+/* Description */
+#desc {
+  margin-top: 2vw;
+  font-size: 1.1vw;
+  line-height: 1.6;
+  color: #cccccc;
+  max-width: 700px;
+  transition: all 0.3s ease;
+}
+
+/* ============================= */
+/* 💡 Responsive Design Below 📱 */
+/* ============================= */
+@media (max-width: 1024px) {
+  #tabs h2 {
+    font-size: 5vw;
+    padding-left: 5%;
+  }
+
+  #desc {
+    font-size: 1.8vw;
+  }
+
+  #tab2 img {
+    max-height: 60vh;
+  }
+}
+
+@media (max-width: 768px) {
+  #tabcont {
+    flex-direction: column;
+    align-items: center;
+    gap: 5vw;
+  }
+
+  #tabs {
+    flex-direction: row;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 5vw;
+    padding-top: 4vw;
+  }
+
+  #tabs h2 {
+    font-size: 6vw;
+    padding-left: 0;
+    text-align: center;
+  }
+
+  #desc {
+    font-size: 3.5vw;
+    text-align: center;
+  }
+
+  #tab2 img {
+    max-height: 50vh;
+  }
+}
+
+@media (max-width: 480px) {
+  #tabs h2 {
+    font-size: 7vw;
+  }
+
+  #desc {
+    font-size: 4vw;
+  }
+
+  #tab2 img {
+    max-height: 45vh;
+  }
+}
+
+#page5{
+    height:70vh;
+    width: 100%;
+    background-color: #e3e2e1;
+    padding:  7vw 2vw;
+
+    .swiper {
+      width: 90%;
+      height: 100%;
+    }
+
+    .swiper-slide {
+      text-align: center;
+      font-size: 18px;
+      border-left: 1px solid #00000077;
+      width:30%;
+      /* background-color: red; */
+    }
+
+    .swiper-slide img {
+      display: block;
+      width:50%;
+      height: 50%;
+      object-fit: cover;
+      padding: 2vw 2vw;
+    }
+    .swiper-slide p{
+        padding: 2vw 2vw;
+    }
+
+    
+#gol1{
+    display: flex;
+    align-items: center;
+}
+#gole h2{
+    padding-right: 5px;
+}
+
+
+
+
+}
+
+#page6{
+    height:100vh;
+    width: 100%;
+    /* background-color: #EfEAE3; */
+}
+#footer{
+   position: fixed;
+   z-index: 9;
+   height: 105vh;
+   width: 100%;
+   bottom: 0;
+   display: flex;
+   /* align-items: flex-end; */
+   background-color: #000;
+   color: white;
+   justify-content: flex-end;
+   flex-direction: column;
+   padding:1vw 3vw;
+
+}
+
+#footer h1{
+   font-size:23vw; 
+   font-weight: 900;
+   padding-left:20px ;
+}
+
+#footer-div{
+    height: 25vh;
+    width: 100%;
+    /* background-color: red; */
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    
+}
+
+#footer-bottom {
+    height: 100%;
+    width: 50%;
+    font-size: 20px;
+    /* background-color: pink;  */
+    font-weight: 900;  
+}
+#footer-bottom h2{
+    font-weight: 900;
+    font-size: 50px;
+    line-height: 50px;
+}
+
+#footer-bottom1{
+    /* background-color: pink; */
+    font-size: 23px;
+    font-weight:600;
+}
+#footer-bottom1 h6{
+    padding-top: 20px;
+    color: rgb(251, 234, 234);
+    border-bottom: 2px solid rgb(170, 166, 166);
+}
+
