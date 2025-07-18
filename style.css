@@ -756,3 +756,176 @@ nav {
     border-bottom: 2px solid rgb(170, 166, 166);
 }
 
+@media (max-width: 480px) {
+  * {
+    font-size: 14px;
+  }
+
+  html, body {
+    overflow-x: hidden;
+  }
+
+  nav {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+  }
+
+  #nav-part2 {
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+
+  #center {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 5vw;
+    height: auto;
+  }
+
+  #left h3 {
+    font-size: 4vw;
+    line-height: 5vw;
+    width: 100%;
+  }
+
+  #center h1 {
+    font-size: 12vw;
+    line-height: 11vw;
+    text-align: left;
+  }
+
+  #page1 video {
+    margin-top: 5vw;
+    border-radius: 10px;
+  }
+
+  #moving-text h1 {
+    font-size: 12vw;
+  }
+
+  #gola {
+    height: 40px;
+    width: 40px;
+  }
+
+  #page2-part1 {
+    flex-direction: column;
+    padding: 8vw 4vw;
+    margin-bottom: 100px;
+  }
+
+  #page2-part1 h1 {
+    font-size: 6vw;
+    width: 100%;
+    line-height: 7vw;
+  }
+
+  #page2-part2 {
+    width: 100%;
+    margin-top: 5vw;
+  }
+
+  #page2-part2 img {
+    width: 100%;
+    margin-top: 4vw;
+  }
+
+  #page2-part2 p {
+    font-size: 3.5vw;
+    width: 100%;
+  }
+
+  #page3 .elem h2 {
+    font-size: 6vw;
+  }
+
+  #fixed-image {
+    display: none !important; /* Hide fixed image on mobile */
+  }
+
+  #all {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  #all h2 {
+    font-size: 5vw;
+  }
+
+  /* Page 4 tweaks */
+  #tabs {
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 4vw;
+    justify-content: center;
+  }
+
+  #tabs h2 {
+    font-size: 6vw;
+    text-align: center;
+  }
+
+  #desc {
+    font-size: 4vw;
+  }
+
+  /* Page 5 Swiper Fixes */
+  #page5 {
+    height: auto;
+    padding: 8vw 2vw;
+  }
+
+  .swiper-slide {
+    width: 100% !important;
+    border-left: none;
+    border-bottom: 1px solid #00000055;
+  }
+
+  .swiper-slide img {
+    width: 70%;
+    height: auto;
+  }
+
+  .swiper-slide p {
+    font-size: 3.5vw;
+  }
+
+  /* Page 6 Footer Fixes */
+  #footer {
+    padding: 3vw;
+    height: auto;
+    position: relative;
+  }
+
+  #footer h1 {
+    font-size: 15vw;
+    padding-left: 0;
+    text-align: center;
+  }
+
+  #footer-div {
+    flex-direction: column;
+    gap: 5vw;
+    height: auto;
+  }
+
+  #footer-bottom, #footer-bottom1 {
+    width: 100%;
+    text-align: center;
+  }
+
+  #footer-bottom h2 {
+    font-size: 6vw;
+    line-height: 6vw;
+  }
+
+  #footer-bottom1 {
+    font-size: 4vw;
+  }
+
+  #footer-bottom1 h6 {
+    font-size: 3vw;
+    padding-top: 10px;
+  }
+}
